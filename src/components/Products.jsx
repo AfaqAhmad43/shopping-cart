@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Product from "./Product";
 
 export default function Products() {
     const [prod, setProd] = useState(false)
@@ -27,16 +28,9 @@ export default function Products() {
     return (
         <div className="prod-group">
             {prod ? (
-                <ul className="product">
+                <ul className="product-list">
                     {data.map(item => (
-                        <div className="prod-info">
-                        <div className="prod-img">
-                            <img src={item.image}/>
-                        </div>
-                        <div className="prod-text">
-                            <li key={item.id}>{item.title}</li>
-                       </div>
-                        </div>
+                        <Product key={item.id} image={item.image} name={item.title} price={item.price} />
                     ))}
                 </ul>
             ) : (
