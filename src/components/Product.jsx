@@ -1,4 +1,4 @@
-export default function Product({id, name, image, price}) {
+export default function Product({id, name, image, price, handleCart, item}) {
     return(
         <div className="prod-info">
             <div className="prod-img">
@@ -7,6 +7,7 @@ export default function Product({id, name, image, price}) {
             <div className="prod-text">
                 <li>{name}</li>
             </div>
+            <button onClick={() => handleCart(item)}>Add</button>
         </div>
     )
 }

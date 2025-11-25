@@ -1,20 +1,22 @@
 import { useState } from 'react'
 import './App.css'
-import Home from './components/Home'
 import Products from './components/Products'
 
 
 
 function App() {
-  // const [selectProd, setSelectProd] = useState([])
+  const [cart, setCart] = useState([])
 
-  // const handleAdd = () => {
+  const handleCart = (product) => {
+    setCart((prevCart) => [...prevCart, product])
 
-  // }
+    console.log('Added')
+    console.log(cart)
+  }
 
   return (
     <>
-      <Products />
+      <Products cart={cart} setCart={setCart} handleCart={handleCart} />
     </>
   )
 }

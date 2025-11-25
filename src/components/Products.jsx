@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Product from "./Product";
 
-export default function Products() {
+export default function Products({cart, setCart, handleCart}) {
     const [prod, setProd] = useState(false)
     const [data, setData] = useState([])
 
@@ -30,7 +30,7 @@ export default function Products() {
             {prod ? (
                 <ul className="product-list">
                     {data.map(item => (
-                        <Product key={item.id} image={item.image} name={item.title} price={item.price} />
+                        <Product key={item.id} image={item.image} name={item.title} price={item.price} item={item} handleCart={handleCart}/>
                     ))}
                 </ul>
             ) : (
@@ -38,5 +38,6 @@ export default function Products() {
             )
             }
         </div>
+
     )
 }
