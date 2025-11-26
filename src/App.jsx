@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Products from './components/Products'
+import Cart from './components/Cart'
 
 
 
@@ -17,6 +18,7 @@ function App() {
   return (
     <>
       <Products cart={cart} setCart={setCart} handleCart={handleCart} />
+      <Cart cart={cart} setCart={setCart}/>
     </>
   )
 }
